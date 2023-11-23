@@ -1,0 +1,14 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# api
+**/api_key.json
+
+# jupyter notebook
+**/.ipynb_checkpoints

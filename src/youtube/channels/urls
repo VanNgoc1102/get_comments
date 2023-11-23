@@ -1,0 +1,8 @@
+
+https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=UCbXgNpp0jedKWcQiULLbDTA&key=AIzaSyBZnBVHK5L57k4cwbEVPN7GXMKHOlmnW3U
+
+https://www.googleapis.com/youtube/v3/videos?part={part}&id={video_id}&key={self.api_key}
+
+https://www.googleapis.com/youtube/v3/search?key=AIzaSyBZnBVHK5L57k4cwbEVPN7GXMKHOlmnW3U&channelId=UCbXgNpp0jedKWcQiULLbDTA&part=snippet,id&order=date
+
+https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCbXgNpp0jedKWcQiULLbDTA&key=AIzaSyBZnBVHK5L57k4cwbEVPN7GXMKHOlmnW3U
