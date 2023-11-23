@@ -12,3 +12,4 @@ venv.bak/
 
 # jupyter notebook
 **/.ipynb_checkpoints
+**/youtube_api.ipynb
