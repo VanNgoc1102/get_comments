@@ -1,5 +1,7 @@
+# note
+
 python3 ./src/youtube/comments/main.py
-python3 ./src/youtube/comments/main.py
+python3 ./src/youtube/channels/main.py
 
 
 main.py
@@ -9,7 +11,7 @@ Pipfile.lock
 
 
 #VIDEO_ID="tlcWiP7OLFI&list=PLhBgTdAWkxeCL3bUv6NLGrg2248ryIUAD"
-#chanelid="UCvckir3Kq2WThY3k_34ZGNw" blv_AQ_D
+#chanelid="UCvckir3Kq2WThY3k_34ZGNw" blv_AQ_D hav 815
 
 channel_id ='UCwBew3PWseCYjLUwrnXqFrw' #huyentammon have 19 video
 

@@ -8,7 +8,7 @@ def get_api():
         return api_key.get('API_KEY')
     
 api_key = get_api()
-video_id ='Q2c13OEz9Ls' 
+video_id ='mnLIWeDsFcM' 
 
 yt = YTComments(api_key, video_id)
 yt.fetch_comments()

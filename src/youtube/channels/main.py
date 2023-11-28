@@ -8,8 +8,8 @@ def get_api():
         return api_key.get('API_KEY')
     
 api_key = get_api()  
-channel_id ='UCbXgNpp0jedKWcQiULLbDTA' #patrick_loeber
-
+# channel_id ='UCbXgNpp0jedKWcQiULLbDTA' #patrick_loeber
+channel_id ='UCwBew3PWseCYjLUwrnXqFrw' #huyen tam mon
 yt = YTstats(api_key, channel_id)
 yt.get_channel_statistics()
 yt.get_channel_video_data()

@@ -5,4 +5,12 @@ https://www.googleapis.com/youtube/v3/videos?part={part}&id={video_id}&key={self
 
 https://www.googleapis.com/youtube/v3/search?key=AIzaSyBZnBVHK5L57k4cwbEVPN7GXMKHOlmnW3U&channelId=UCbXgNpp0jedKWcQiULLbDTA&part=snippet,id&order=date
 
+
+
 https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCbXgNpp0jedKWcQiULLbDTA&key=AIzaSyBZnBVHK5L57k4cwbEVPN7GXMKHOlmnW3U
+
+https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUbXgNpp0jedKWcQiULLbDTA&maxResults=50&key=AIzaSyB6Qhlr3A0YReR5f_imkwgv7L-xDlVPDQw
+
+https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={playlist_id}&maxResults={MAX_RESULTS}&key={API_KEY}
+
+https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UCvckir3Kq2WThY3k_34ZGNw&maxResults=100&key=AIzaSyB6Qhlr3A0YReR5f_imkwgv7L-xDlVPDQw

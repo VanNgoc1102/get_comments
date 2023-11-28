@@ -8,6 +8,7 @@ class YTstats:
     def __init__(self, api_key, channel_id):
         self.api_key = api_key
         self.channel_id = channel_id
+        self.base_url = 'https://www.googleapis.com/youtube/v3/'
         self.channel_statistics = None
         self.video_data = None
 
@@ -18,7 +19,7 @@ class YTstats:
     def get_channel_statistics(self):
         """Extract the channel statistics"""
         print('get channel statistics...')
-        url = f'https://www.googleapis.com/youtube/v3/channels?part=statistics&id={self.channel_id}&key={self.api_key}'
+        url = f'{self.base_url}channels?part=statistics&id={self.channel_id}&key={self.api_key}'
         pbar = tqdm(total=1)
         
         json_url = requests.get(url)
@@ -54,7 +55,7 @@ class YTstats:
         parts can be: 'snippet', 'statistics', 'contentDetails', 'topicDetails'
         """
 
-        url = f"https://www.googleapis.com/youtube/v3/videos?part={part}&id={video_id}&key={self.api_key}"
+        url = f"{self.base_url}videos?part={part}&id={video_id}&key={self.api_key}"
         json_url = requests.get(url)
         data = json.loads(json_url.text)
         try:
@@ -71,7 +72,7 @@ class YTstats:
         channel_playlists = playlistId: title, publishedAt
         return channel_videos, channel_playlists
         """
-        url = f"https://www.googleapis.com/youtube/v3/search?key={self.api_key}&channelId={self.channel_id}&part=snippet,id&order=date"
+        url = f"{self.base_url}search?key={self.api_key}&channelId={self.channel_id}&part=snippet,id&order=date"
         if limit is not None and isinstance(limit, int):
             url += "&maxResults=" + str(limit)
 
@@ -134,3 +135,5 @@ class YTstats:
             json.dump(fused_data, f, indent=4)
         
         print('file dumped to', filename)
+
+
