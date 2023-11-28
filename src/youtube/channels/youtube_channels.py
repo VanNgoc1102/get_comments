@@ -79,7 +79,7 @@ video_ids = yt.get_video_ids(num_results)
 # video_id = 'WDG4X3jDSlA'
 for video_id in video_ids:
     youtube_fetcher = YouTubeCommentsFetcher(api_key, video_id)
-    all_comments = youtube_fetcher.get_video_comments()
+    all_comments = youtube_fetcher.get_fetch_comments()
     youtube_fetcher.dump(all_comments)
 
 
