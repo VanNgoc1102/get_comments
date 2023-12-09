@@ -1,7 +1,7 @@
 import requests
 import json
 
-class YouTubeCommentsFetcher:
+class YTcomments:
     def __init__(self, api_key, video_id):
         self.api_key = api_key
         self.video_id = video_id
@@ -80,7 +80,8 @@ class YouTubeCommentsFetcher:
                     published_at = item['snippet']['publishedAt']
                     updated_at = item['snippet']['updatedAt']
 
-                    replies.append({'author': author,
+                    replies.append({'etag': etag,
+                                    'author': author,
                                     'authorChannelUrl': author_channel_url,
                                     'content': content,
                                     'published_at': published_at,
@@ -107,6 +108,6 @@ class YouTubeCommentsFetcher:
 api_key = 'AIzaSyB6Qhlr3A0YReR5f_imkwgv7L-xDlVPDQw'
 video_id = '39TQUbn3e_Q'
 
-youtube_fetcher = YouTubeCommentsFetcher(api_key, video_id)
+youtube_fetcher = YTcomments(api_key, video_id)
 all_comments = youtube_fetcher.get_fetch_comments()
 youtube_fetcher.dump(all_comments)

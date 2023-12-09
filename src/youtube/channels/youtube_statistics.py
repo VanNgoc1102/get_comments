@@ -130,10 +130,23 @@ class YTstats:
 
         channel_title = self.video_data.popitem()[1].get('channelTitle', self.channel_id)
         channel_title = channel_title.replace(" ", "_").lower()
-        filename = channel_title + '.json'
-        with open(filename, 'w') as f:
+        base_file = 'src/youtube/data/'
+        base_file += channel_title + '.json'
+        
+        with open(base_file, 'w') as f:
             json.dump(fused_data, f, indent=4)
         
-        print('file dumped to', filename)
+        print('file dumped to', channel_title)
 
 
+def get_api():
+    with open('src/youtube/comments/api_key.json', 'r') as openfile:
+        api_key = json.load(openfile)
+        return api_key.get('API_KEY')
+    
+api_key = get_api()  
+channel_id ='UCwBew3PWseCYjLUwrnXqFrw' #huyen tam mon
+yt = YTstats(api_key, channel_id)
+yt.get_channel_statistics()
+yt.get_channel_video_data()
+yt.dump()
