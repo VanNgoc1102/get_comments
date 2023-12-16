@@ -1,0 +1,34 @@
+version: '3'
+  
+services:
+  postgres-youtube:
+    container_name: postgres_yt_db
+    image: postgres:11.18-alpine
+    ports:
+      - 5438:5432
+    env_file: .env
+    restart: unless-stopped
+    volumes:
+      - ../data:/var/lib/postgresql/data
+    networks:
+       - youtube_network
+  
+  metabase:
+    container_name: metabase_yt_db
+    image: metabase/metabase:v0.45.1
+    ports:
+      - 3001:3000
+    env_file: .env
+    restart: unless-stopped
+    depends_on:
+      - postgres-youtube
+    links:
+      - postgres-youtube
+    networks:
+       - youtube_network
+
+networks:
+  youtube_network:
+    name: youtube_network
+    driver: host
+    external: true

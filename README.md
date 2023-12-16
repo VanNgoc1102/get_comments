@@ -1,26 +1,29 @@
-# docker file
+## docker file
+```
 Dockerfile
-
-# docker compose
+```
+## docker compose
+```
 docker
-- youtube-compose.yml
+- youtube-compose.yaml
 - key.env 
 
 docker system prune
 docker system df
 
-VIDEO_ID="tlcWiP7OLFI&list=PLhBgTdAWkxeCL3bUv6NLGrg2248ryIUAD"
+video_id="tlcWiP7OLFI&list=PLhBgTdAWkxeCL3bUv6NLGrg2248ryIUAD"
 
 chanelid="UCvckir3Kq2WThY3k_34ZGNw" blv_AQ_D hav 815
 channel_id ='UCwBew3PWseCYjLUwrnXqFrw' #huyentammon have 19 video
 
-
+```
 ## Install new package
 
 ```
 pip install pipenv
 pipenv install package_name
 pipenv install pyyaml
+
 ```
 
 
