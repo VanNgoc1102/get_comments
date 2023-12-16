@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  my-youtube:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    env_file:
+    - key.env
+    command: python3
+    restart: always
+    stdin_open: true
+    tty: true

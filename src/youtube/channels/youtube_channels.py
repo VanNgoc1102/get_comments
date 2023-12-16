@@ -1,7 +1,9 @@
+import os
 import json
+
 import requests
 
-from youtube_comments import YTcomments
+from src.youtube.channels.youtube_comments import YTcomments
 
 class YTchannels:
 
@@ -59,18 +61,19 @@ class YTchannels:
         return channel_data['items'][0]['contentDetails']['relatedPlaylists']['uploads']
     
 
-api_key = "AIzaSyB6Qhlr3A0YReR5f_imkwgv7L-xDlVPDQw"
-channel_id ='UCwBew3PWseCYjLUwrnXqFrw' #blv_AQ_D 814 video 
-num_results = 3
-yt = YTchannels(api_key, channel_id)
-yt.get_channel_statistics()
-print(yt.video_count)
-video_ids = yt.get_video_ids(num_results)
-# api_key = 'AIzaSyB6Qhlr3A0YReR5f_imkwgv7L-xDlVPDQw'
-# video_id = 'WDG4X3jDSlA'
-for video_id in video_ids:
-    youtube_fetcher = YTcomments(api_key, video_id)
-    all_comments = youtube_fetcher.get_fetch_comments()
-    youtube_fetcher.dump(all_comments)
+if __name__ == "__main__":
+    api_key = os.getenv('API_KEY')
+    channel_id ='UCwBew3PWseCYjLUwrnXqFrw' #blv_AQ_D 814 video 
+
+    num_results = 3
+    yt = YTchannels(api_key, channel_id)
+    yt.get_channel_statistics()
+    print(yt.video_count)
+
+    video_ids = yt.get_video_ids(num_results)
+    for video_id in video_ids:
+        youtube_fetcher = YTcomments(api_key, video_id)
+        all_comments = youtube_fetcher.get_fetch_comments()
+        youtube_fetcher.dump(all_comments)
 
     

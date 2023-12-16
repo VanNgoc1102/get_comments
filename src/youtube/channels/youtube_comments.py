@@ -1,5 +1,7 @@
-import requests
+import os
 import json
+
+import requests
 
 class YTcomments:
     def __init__(self, api_key, video_id):
@@ -105,9 +107,13 @@ class YTcomments:
             json.dump(data, file, indent=4)
         print('file dumped')
 
-api_key = 'AIzaSyB6Qhlr3A0YReR5f_imkwgv7L-xDlVPDQw'
-video_id = '39TQUbn3e_Q'
 
-youtube_fetcher = YTcomments(api_key, video_id)
-all_comments = youtube_fetcher.get_fetch_comments()
-youtube_fetcher.dump(all_comments)
+
+if __name__ == "__main__":
+    api_key = os.getenv('API_KEY')
+    video_id = 'fZ7SWhbjLs0'
+
+    youtube_fetcher = YTcomments(api_key, video_id)
+    all_comments = youtube_fetcher.get_fetch_comments()
+    youtube_fetcher.dump(all_comments)
+    print(all_comments) 
